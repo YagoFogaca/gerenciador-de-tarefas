@@ -13,6 +13,14 @@ class Routes extends ConfigRoutes
         "path" => "/",
         "action" => "index"
       ],
+      "createTask" => [
+        "path" => "/create-task",
+        "action" => "createTask"
+      ],
+      "create" => [
+        "path" => "/create",
+        "action" => "create"
+      ]
     ];
 
     $this->setRoutes($routes);
