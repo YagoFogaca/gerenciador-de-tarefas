@@ -58,3 +58,20 @@ td:nth-child(4) i {
 td:nth-child(5) i {
   color: #f05454;
 }
+
+i.arrows {
+  position: absolute;
+  font-size: 34px;
+  color: #eaeaea;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+i.left {
+  left: 15px;
+}
+
+i.right {
+  right: 15px;
+}
