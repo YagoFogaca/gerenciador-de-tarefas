@@ -7,11 +7,12 @@ section.carrossel {
 
 section.card {
   width: 100%;
-  min-height: calc(100vh - 85px);
+  max-height: calc(100vh - 85px);
   background-color: #eaeaea;
   padding: 10px 15px;
-
   flex-shrink: 0;
+
+  overflow: inherit;
 }
 
 div.card-title {
