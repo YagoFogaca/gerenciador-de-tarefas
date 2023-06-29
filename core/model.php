@@ -4,14 +4,19 @@ namespace Core;
 
 use Core\Database;
 
-class Model
+abstract class Model
 {
-  private $db = Database::connection();
+  private $db;
+
+  public function __construct()
+  {
+    $this->db = Database::connection();
+  }
 
   protected function create(array $taks)
   {
     $query = $this->db->prepare('INSERT INTO tarefa (hora, dia, tarefa) VALUES (:hora, :dia, :tarefa)');
-    $query->bindValue(":titulo", $taks['hora']);
+    $query->bindValue(":hora", $taks['hora']);
     $query->bindValue(":dia", $taks['dia']);
     $query->bindValue(":tarefa", $taks['tarefa']);
     $query->execute();
