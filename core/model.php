@@ -33,6 +33,6 @@ abstract class Model
     $query = $this->db->prepare('SELECT * FROM tarefa');
     $query->execute();
 
-    return $query->fetchAll(\PDO::FETCH_OBJ);
+    return $query->fetchAll(\PDO::FETCH_ASSOC);
   }
 }
