@@ -24,6 +24,7 @@ section.menu {
 section.menu ul {
   width: 40%;
   list-style: none;
+  margin-bottom: 0px;
 
   display: flex;
   flex-direction: row;
