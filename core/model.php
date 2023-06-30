@@ -55,4 +55,19 @@ abstract class Model
     $results = $query->execute();
     return $results;
   }
+
+  protected function delete($id)
+  {
+    $query = $this->db->prepare('DELETE FROM tarefa WHERE id = :id');
+    $query->bindValue(':id', $id);
+    $results = $query->execute();
+    return $results;
+  }
+
+  protected function deleteAll()
+  {
+    $query = $this->db->prepare('DELETE FROM tarefa');
+    $results = $query->execute();
+    return $results;
+  }
 }

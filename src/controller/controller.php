@@ -67,6 +67,30 @@ class Controller extends ConfigController
     }
   }
 
+  public function delete()
+  {
+    try {
+      $model = new Model();
+      $model->deleteTask($_GET['id']);
+      header("Location: /");
+    } catch (\PDOException $error) {
+      $msgError = $error->getMessage();
+      echo "<script>alert('$msgError')</script>";
+    }
+  }
+
+  public function deleteAll()
+  {
+    try {
+      $model = new Model();
+      $model->updateTask($_GET['id'], $_POST);
+      header("Location: /update?id= {$_GET['id']}");
+    } catch (\PDOException $error) {
+      $msgError = $error->getMessage();
+      echo "<script>alert('$msgError')</script>";
+    }
+  }
+
   public function page404()
   {
     $this->run('page404');

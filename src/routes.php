@@ -28,6 +28,14 @@ class Routes extends ConfigRoutes
       "updateTask" => [
         "path" => "/update-task",
         "action" => "update"
+      ],
+      "deleteTask" => [
+        "path" => "/delete",
+        "action" => "delete"
+      ],
+      "deleteTasks" => [
+        "path" => "/delete-task",
+        "action" => "deleteAll"
       ]
     ];
 

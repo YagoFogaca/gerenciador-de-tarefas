@@ -102,4 +102,24 @@ class Model extends ModelConfig
 
     return true;
   }
+
+  public function deleteTask($id)
+  {
+    $taskDeleted = $this->delete($id);
+    if (!$taskDeleted) {
+      throw new \PDOException('Tarefa não foi deletada');
+    }
+
+    return true;
+  }
+
+  public function deleteAllTask()
+  {
+    $tasksDeleted = $this->deleteAll();
+    if (!$tasksDeleted) {
+      throw new \PDOException('Tarefas não foram deletadas');
+    }
+
+    return true;
+  }
 }
