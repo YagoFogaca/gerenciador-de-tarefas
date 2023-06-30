@@ -24,6 +24,10 @@ class Routes extends ConfigRoutes
       "update" => [
         "path" => "/update",
         "action" => "update"
+      ],
+      "updateTask" => [
+        "path" => "/update-task",
+        "action" => "updateTask"
       ]
     ];
 
