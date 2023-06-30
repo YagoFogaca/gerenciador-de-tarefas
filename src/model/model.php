@@ -54,7 +54,7 @@ class Model extends ModelConfig
       $this->create($task);
     }
   }
-
+  // Tenho o seguinte metodo:
   public function findAllTasks()
   {
     $days = [
@@ -76,7 +76,14 @@ class Model extends ModelConfig
           array_push($array, $task);
         }
       }
+      usort($array, function ($a, $b) {
+        $timeA = strtotime($a['hora']);
+        $timeB = strtotime($b['hora']);
+
+        return $timeA - $timeB;
+      });
     }
+
     return $days;
   }
 
