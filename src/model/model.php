@@ -89,4 +89,17 @@ class Model extends ModelConfig
 
     return $task;
   }
+
+  public function updateTask($id, $task)
+  {
+    $taskUpdate = $this->findByIdTasks($id);
+    $taskUpdate = array_merge($taskUpdate, $task);
+
+    $taskUpdated = $this->update($id, $taskUpdate);
+    if (!$taskUpdated) {
+      throw new \PDOException('Tarefa não foi atualizada');
+    }
+
+    return true;
+  }
 }

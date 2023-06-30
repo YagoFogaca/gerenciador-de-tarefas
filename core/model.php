@@ -47,12 +47,12 @@ abstract class Model
 
   protected function update($id, $task)
   {
-    $query = $this->db->prepare('UPDATE sua_tabela SET dia = :dia, hora = :hora, tarefa = :tarefa WHERE id = :id');
+    $query = $this->db->prepare('UPDATE tarefa SET dia = :dia, hora = :hora, tarefa = :tarefa WHERE id = :id');
     $query->bindValue(':dia', $task['dia']);
     $query->bindValue(':hora', $task['hora']);
     $query->bindValue(':tarefa', $task['tarefa']);
     $query->bindValue(':id', $id);
-
-    return $query->execute();
+    $results = $query->execute();
+    return $results;
   }
 }

@@ -60,6 +60,7 @@ class Controller extends ConfigController
     try {
       $model = new Model();
       $model->updateTask($_GET['id'], $_POST);
+      echo '<script>alert("Atualizado com sucesso")</script>';
       $this->index();
     } catch (\PDOException $error) {
       $msgError = $error->getMessage();
