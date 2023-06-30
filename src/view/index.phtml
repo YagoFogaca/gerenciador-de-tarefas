@@ -1,68 +1,49 @@
 <section class="carrossel">
   <i class="fa-solid fa-arrow-left arrows left"></i>
-  <section class="card">
-    <div class="card-title">
-      <h3>Segunda</h3>
-    </div>
-    <table class="table">
-      <tr>
-        <th class="line-minor">Feito</th>
-        <th class="line-minor">Hora</th>
-        <th class="line">Tarefa</th>
-        <th class="line-minor config">Editar</th>
-        <th class="line-minor config">Apagar</th>
-      </tr>
-      <tr class="task">
-        <td class="line-minor">
-          <a href="#">
-            <i class="fa-solid fa-check"></i>
-          </a>
-        </td>
-        <td class="line-minor">9h0</td>
-        <td class="line"> Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum officiis commodi modi veniam amet, provident nihil rem porro, illo est id harum fuga tempora assumenda magni earum quaerat nemo excepturi.</td>
-        <td class="line-minor config">
-          <a href="#">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </a>
-        </td>
-        <td class="line-minor config">
-          <a href="#">
-            <i class="fa-solid fa-trash"></i>
-          </a>
-        </td>
-      </tr>
-    </table>
-  </section>
-
-  <section class="card">
-    <div class="card-title">
-      <h3>Terça</h3>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="card-title">
-      <h3>Quarta</h3>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="card-title">
-      <h3>Quinta</h3>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="card-title">
-      <h3>Sexta</h3>
-    </div>
-  </section>
-
-  <section class="card">
-    <div class="card-title">
-      <h3>Sábado</h3>
-    </div>
-  </section>
-
+  <?php
+  foreach ($this->view->tasks as $days => $tasks) {
+  ?>
+    <section class="card">
+      <div class="card-title">
+        <h3><?= $days ?></h3>
+      </div>
+      <table class="table">
+        <tr>
+          <th class="line-minor">Feito</th>
+          <th class="line-minor">Hora</th>
+          <th class="line">Tarefa</th>
+          <th class="line-minor config">Editar</th>
+          <th class="line-minor config">Apagar</th>
+        </tr>
+        <?php
+        foreach ($tasks as $task) {
+        ?>
+          <tr class="task">
+            <td class="line-minor">
+              <a href="#">
+                <i class="fa-solid fa-check"></i>
+              </a>
+            </td>
+            <td class="line-minor"><?= $task['hora'] ?></td>
+            <td class="line"><?= $task['tarefa'] ?></td>
+            <td class="line-minor config">
+              <a href="#">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </a>
+            </td>
+            <td class="line-minor config">
+              <a href="#">
+                <i class="fa-solid fa-trash"></i>
+              </a>
+            </td>
+          </tr>
+        <?php
+        }
+        ?>
+      </table>
+    </section>
+  <?php
+  }
+  ?>
   <i class="fa-solid fa-arrow-right arrows right"></i>
 </section>

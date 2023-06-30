@@ -58,45 +58,25 @@ class Model extends ModelConfig
   public function findAllTasks()
   {
     $days = [
-      'Segunda' => [],
-      'Terça' => [],
-      'Quarta' => [],
-      'Quinta' => [],
-      'Sexta' => [],
-      'Sábado' => []
+      'Seg' => [],
+      'Ter' => [],
+      'Qua' => [],
+      'Qui' => [],
+      'Sex' => [],
+      'Sáb' => []
     ];
 
     $tasks = $this->findAll();
 
-    // foreach ($days as $day => &$array) {
-    //   // print_r($day);
-    //   foreach ($tasks as $task) {
-    //     // print_r($task);
-    //     // tem que ser igual a task[dia] $day
-    //     // array_push($array, $task);
-    //   }
-    // }
-
-    // Array
-    // (
-    //     [0] => Array
-    //         (
-    //             [id] => 3
-    //             [hora] => 20:19
-    //             [dia] => seg
-    //             [tarefa] => teste 1
-    //         )
-
-    //     [1] => Array
-    //         (
-    //             [id] => 4
-    //             [hora] => 23:19
-    //             [dia] => ter
-    //             [tarefa] => teste 2
-    //         )
-
-    // )
-
-    return $tasks;
+    foreach ($days as $day => &$array) {
+      // $day retorna os dias Segunda ...
+      foreach ($tasks as $task) {
+        // Retorna o array da tarefa
+        if ($task['dia'] === strtolower($day)) {
+          array_push($array, $task);
+        }
+      }
+    }
+    return $days;
   }
 }
