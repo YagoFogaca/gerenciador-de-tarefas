@@ -83,8 +83,8 @@ class Controller extends ConfigController
   {
     try {
       $model = new Model();
-      $model->updateTask($_GET['id'], $_POST);
-      header("Location: /update?id= {$_GET['id']}");
+      $model->deleteAllTask();
+      header("Location: /");
     } catch (\PDOException $error) {
       $msgError = $error->getMessage();
       echo "<script>alert('$msgError')</script>";
