@@ -40,6 +40,32 @@ class Controller extends ConfigController
     }
   }
 
+  public function update()
+  { {
+      try {
+        $model = new Model();
+
+        $this->view->task = $model->findByIdTasks($_GET['id']);
+        $this->run('update');
+        exit();
+      } catch (\PDOException $error) {
+        $msgError = $error->getMessage();
+        echo "<script>alert('$msgError')</script>";
+      }
+    }
+  }
+
+  // public function updateTask()
+  // {
+  //   try {
+  //     $model = new Model();
+  //     $model->update($_GET['id']);
+  //   } catch (\PDOException $error) {
+  //     $msgError = $error->getMessage();
+  //     echo "<script>alert('$msgError')</script>";
+  //   }
+  // }
+
   public function page404()
   {
     $this->run('page404');

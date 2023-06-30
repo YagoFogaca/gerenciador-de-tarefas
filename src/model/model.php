@@ -79,4 +79,14 @@ class Model extends ModelConfig
     }
     return $days;
   }
+
+  public function findByIdTasks($id)
+  {
+    $task = $this->findById($id);
+    if (!$task) {
+      throw new \PDOException('Tarefa não encontrada');
+    }
+
+    return $task;
+  }
 }

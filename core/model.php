@@ -35,4 +35,13 @@ abstract class Model
 
     return $query->fetchAll(\PDO::FETCH_ASSOC);
   }
+
+  protected function findById($id)
+  {
+    $query = $this->db->prepare('SELECT * FROM tarefa WHERE id=:id');
+    $query->bindValue(":id", $id);
+    $query->execute();
+
+    return $query->fetch(\PDO::FETCH_ASSOC);
+  }
 }

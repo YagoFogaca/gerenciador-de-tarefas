@@ -20,6 +20,10 @@ class Routes extends ConfigRoutes
       "create" => [
         "path" => "/create",
         "action" => "create"
+      ],
+      "update" => [
+        "path" => "/update",
+        "action" => "update"
       ]
     ];
 
