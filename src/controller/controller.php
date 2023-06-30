@@ -40,7 +40,7 @@ class Controller extends ConfigController
     }
   }
 
-  public function update()
+  public function updateTask()
   { {
       try {
         $model = new Model();
@@ -55,16 +55,17 @@ class Controller extends ConfigController
     }
   }
 
-  // public function updateTask()
-  // {
-  //   try {
-  //     $model = new Model();
-  //     $model->update($_GET['id']);
-  //   } catch (\PDOException $error) {
-  //     $msgError = $error->getMessage();
-  //     echo "<script>alert('$msgError')</script>";
-  //   }
-  // }
+  public function update()
+  {
+    try {
+      $model = new Model();
+      $model->updateTask($_GET['id'], $_POST);
+      $this->index();
+    } catch (\PDOException $error) {
+      $msgError = $error->getMessage();
+      echo "<script>alert('$msgError')</script>";
+    }
+  }
 
   public function page404()
   {

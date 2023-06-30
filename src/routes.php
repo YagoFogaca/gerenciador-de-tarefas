@@ -23,11 +23,11 @@ class Routes extends ConfigRoutes
       ],
       "update" => [
         "path" => "/update",
-        "action" => "update"
+        "action" => "updateTask"
       ],
       "updateTask" => [
         "path" => "/update-task",
-        "action" => "updateTask"
+        "action" => "update"
       ]
     ];
 

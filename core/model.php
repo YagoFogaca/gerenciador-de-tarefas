@@ -44,4 +44,15 @@ abstract class Model
 
     return $query->fetch(\PDO::FETCH_ASSOC);
   }
+
+  protected function update($id, $task)
+  {
+    $query = $this->db->prepare('UPDATE sua_tabela SET dia = :dia, hora = :hora, tarefa = :tarefa WHERE id = :id');
+    $query->bindValue(':dia', $task['dia']);
+    $query->bindValue(':hora', $task['hora']);
+    $query->bindValue(':tarefa', $task['tarefa']);
+    $query->bindValue(':id', $id);
+
+    return $query->execute();
+  }
 }
