@@ -14,11 +14,11 @@ class TaskController extends Controller
 
     public function create()
     {
-        return view('create');
+        return view('pages.create');
     }
 
     public function update()
     {
-        return view('update');
+        return view('pages.update');
     }
 }
