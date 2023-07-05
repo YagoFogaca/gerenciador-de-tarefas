@@ -1,0 +1,113 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Roboto Mono", monospace;
+}
+
+body {
+    background-color: #3c4048;
+    min-height: 100vh;
+}
+
+.navbar-collapse {
+    justify-content: flex-end;
+}
+
+main.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    position: relative;
+}
+
+section.carrossel {
+    width: 85%;
+    display: flex;
+    overflow-x: hidden;
+    margin-top: 5px;
+}
+
+section.card {
+    width: 100%;
+    max-height: calc(100vh - 85px);
+    min-height: 50vh;
+    background-color: #eaeaea;
+    padding: 10px 15px;
+    flex-shrink: 0;
+
+    overflow: inherit;
+}
+
+div.card-title {
+    width: 100%;
+    text-align: center;
+}
+
+tr {
+    text-align: left;
+}
+
+tr.task {
+    border-bottom: 1px solid;
+}
+
+th,
+td {
+    padding: 10px 5px;
+    vertical-align: baseline;
+}
+
+.line {
+    width: 45%;
+    max-height: 150px;
+}
+
+.line-minor {
+    width: 5%;
+}
+
+.config {
+    text-align: center;
+    width: 1%;
+}
+
+td:nth-child(1) i {
+    color: #06ff13;
+}
+
+td:nth-child(4) i {
+    color: #ffff00;
+}
+
+td:nth-child(5) i {
+    color: #f05454;
+}
+
+i.arrows {
+    position: absolute;
+    font-size: 34px;
+    color: #eaeaea;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+}
+
+i.left {
+    left: 15px;
+}
+
+i.right {
+    right: 15px;
+}
+
+section.card-variant {
+    width: 60%;
+    margin-top: 5px;
+}
+
+div.input-group {
+    gap: 115px;
+}
