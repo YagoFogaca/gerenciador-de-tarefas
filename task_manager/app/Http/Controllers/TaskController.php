@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Task;
 
 class TaskController extends Controller
 {
@@ -15,6 +16,19 @@ class TaskController extends Controller
     public function create()
     {
         return view('pages.create');
+    }
+
+    public function createTask(Request $req)
+    {
+        $new_task = [
+            'hora' => '18:20',
+            'dia' => 'seg',
+            'check' => false,
+            'tarefa' => 'Testeee'
+        ];
+
+        $task = new Task($new_task);
+        $task->save();
     }
 
     public function update()
