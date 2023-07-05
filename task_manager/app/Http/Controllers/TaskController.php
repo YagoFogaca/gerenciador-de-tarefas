@@ -6,11 +6,15 @@ use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
-    // Controller para views
 
     public function index()
     {
-        return view('home');
+        return view('index');
+    }
+
+    public function create()
+    {
+        return view('create');
     }
 
     public function update()
