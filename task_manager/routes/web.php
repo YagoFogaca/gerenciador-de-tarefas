@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [TaskController::class, 'index']);
-Route::post('/', [TaskController::class, 'create']);
-Route::put('/{id}', [TaskController::class, 'update']);
+Route::get('/create-task', [TaskController::class, 'create']);
+Route::get('/update-task/{id}', [TaskController::class, 'update']);
