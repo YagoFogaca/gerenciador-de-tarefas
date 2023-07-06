@@ -21,7 +21,7 @@
                 <td class="line-minor">{{ $task['hora'] }}</td>
                 <td class="line">{{ $task['tarefa'] }}</td>
                 <td class="line-minor config">
-                    <a href="/update?id={{ $task['id'] }}">
+                    <a href={{ route('update', ['id' => $task['id']]) }}>
                         <i class="fa-solid fa-pen-to-square"></i>
                     </a>
                 </td>

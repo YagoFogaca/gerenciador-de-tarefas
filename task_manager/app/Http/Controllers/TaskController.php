@@ -105,9 +105,10 @@ class TaskController extends Controller
         return redirect()->back();
     }
 
-    public function update()
+    public function update(string $id)
     {
-        return view('pages.update');
+        $task = Task::where('id', $id)->first();
+        return view('pages.update', ['task' => $task]);
     }
 
     public function deleteAll()
