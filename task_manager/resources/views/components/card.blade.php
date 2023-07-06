@@ -26,7 +26,7 @@
                     </a>
                 </td>
                 <td class="line-minor config">
-                    <a href="/delete?id={{ $task['id'] }}">
+                    <a href={{ route('delete', ['id' => $task['id']]) }}>
                         <i class="fa-solid fa-trash"></i>
                     </a>
                 </td>
