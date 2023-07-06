@@ -10,7 +10,32 @@ class TaskController extends Controller
 
     public function index()
     {
-        return view('pages.index');
+        $days = [
+            'Seg' => [],
+            'Ter' => [],
+            'Qua' => [],
+            'Qui' => [],
+            'Sex' => [],
+            'Sáb' => []
+        ];
+
+        $data = Task::all()->toArray();
+
+        foreach ($days as $day => &$array) {
+            foreach ($data as $task) {
+                if ($task['dia'] === strtolower($day)) {
+                    array_push($array, $task);
+                }
+            }
+            usort($array, function ($a, $b) {
+                $timeA = strtotime($a['hora']);
+                $timeB = strtotime($b['hora']);
+
+                return $timeA - $timeB;
+            });
+        }
+
+        return view('pages.index', ['data' => $days]);
     }
 
     public function create()
