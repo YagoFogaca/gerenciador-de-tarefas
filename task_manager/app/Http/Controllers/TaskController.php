@@ -109,4 +109,14 @@ class TaskController extends Controller
     {
         return view('pages.update');
     }
+
+    public function deleteAll()
+    {
+        Task::truncate();
+        return redirect()->back();
+    }
+
+    public function delete(Request $req)
+    {
+    }
 }

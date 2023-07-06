@@ -19,3 +19,4 @@ Route::get('/create-task', [TaskController::class, 'create']);
 Route::get('/update-task/{id}', [TaskController::class, 'update']);
 
 Route::post('/create', [TaskController::class, 'createTask'])->name('create');
+Route::get('/reset-tasks', [TaskController::class, 'deleteAll'])->name('reset');

@@ -17,7 +17,7 @@
                     <a class="nav-link" href="/create-task">Criar</a>
                 </li>
                 <li class="nav-item" style="display: flex; align-items: center;">
-                    <a class="btn btn-danger btn-sm" href="/delete-task">Resetar</a>
+                    <a class="btn btn-danger btn-sm" href={{ route('reset') }}>Resetar</a>
                 </li>
             </ul>
         </div>
