@@ -1,6 +1,7 @@
 <section class="card card-variant">
-
-    <form class="createTask" action={{ route($action) }} method="POST">
+    {{-- route('delete', ['id' => $task['id']]) --}}
+    {{-- ['action' => 'updateTask', 'data' => $task, 'id' => $task['id']] --}}
+    <form class="createTask" action={{ $id ? route($action, $id) : route($action) }} method="POST">
         @csrf
         <div class="input-group-task">
             <div class="input-group mb-3">

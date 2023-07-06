@@ -21,4 +21,4 @@ Route::get('/update-task/{id}', [TaskController::class, 'update'])->name('update
 Route::post('/create', [TaskController::class, 'createTask'])->name('create');
 Route::get('/reset-tasks', [TaskController::class, 'deleteAll'])->name('reset');
 Route::get('/delete/{id}', [TaskController::class, 'delete'])->name('delete');
-Route::get('/update/{id}', [TaskController::class, 'updateTask'])->name('updateTask');
+Route::post('/update/{id}', [TaskController::class, 'updateTask'])->name('updateTask');
