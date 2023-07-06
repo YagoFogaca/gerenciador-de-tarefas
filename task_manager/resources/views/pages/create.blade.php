@@ -1,5 +1,5 @@
 @extends('layouts.index')
 
 @section('content')
-    @include('components.form', ['action' => '/'])
+    @include('components.form', ['action' => 'create'])
 @endsection

@@ -1,6 +1,7 @@
 <section class="card card-variant">
 
-    <form class="createTask" action={{ $action }} method="post">
+    <form class="createTask" action={{ route('create') }} method="POST">
+        @csrf
         <div class="input-group-task">
             <div class="input-group mb-3">
                 <div class="mb-3">

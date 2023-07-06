@@ -21,14 +21,15 @@ class TaskController extends Controller
     public function createTask(Request $req)
     {
         $new_task = [
-            'hora' => '18:20',
-            'dia' => 'seg',
+            'hora' => $req->input('hora'),
+            'dia' =>  $req->input('dia'),
             'check' => false,
-            'tarefa' => 'Testeee'
+            'tarefa' => $req->input('tarefa')
         ];
 
         $task = new Task($new_task);
         $task->save();
+        return redirect()->back();
     }
 
     public function update()
