@@ -111,6 +111,14 @@ class TaskController extends Controller
         return view('pages.update', ['task' => $task]);
     }
 
+    public function updateTask(Request $req, string $id)
+    {
+        $taskUpdate = $req->all();
+        $task = Task::find($id);
+        $task->update($taskUpdate);
+        return redirect()->back();
+    }
+
     public function deleteAll()
     {
         Task::truncate();
